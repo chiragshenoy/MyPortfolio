@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import chiragshenoy.myportfolio.Adapters.ProjectAdapter;
+import chiragshenoy.myportfolio.Models.Project;
 import chiragshenoy.myportfolio.R;
 
 public class MainActivity extends BaseActivity {
@@ -19,7 +21,9 @@ public class MainActivity extends BaseActivity {
     RecyclerView mRecyclerView;
 
     private ProjectAdapter mProjectAdapter;
-    private ArrayList<String> mProjectClasses;
+
+    private ArrayList<Project> mProjects;
+
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
@@ -28,11 +32,10 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mProjectClasses = new ArrayList<>();
-
-        initViews();
+        mProjects = new ArrayList<Project>();
 
         populateClasses();
+        initViews();
 
 
     }
@@ -50,18 +53,19 @@ public class MainActivity extends BaseActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mProjectAdapter = new ProjectAdapter(mProjectClasses);
+        mProjectAdapter = new ProjectAdapter(mProjects, getApplication());
         mRecyclerView.setAdapter(mProjectAdapter);
     }
 
     private void populateClasses() {
 
-        mProjectClasses.add("Spotify Streamer");
-        mProjectClasses.add("Scores App");
-        mProjectClasses.add("Library App");
-        mProjectClasses.add("Build it bigger");
-        mProjectClasses.add("XYZ Reader");
-        mProjectClasses.add("Capstone Project");
+        String[] titles = new String[]{"Spotify Streamer", "Scores App", "Library App", "Build it bigger", "XYZ Reader", "Capstone!"};
+        String[] subtitles = new String[]{"Project 0", "Project 1", "Project 2", "Project 3", "Project 4", "Project 5"};
+        Integer[] icons = new Integer[]{R.drawable.spotify, R.drawable.score, R.drawable.library, R.drawable.builditbigger, R.drawable.xyzreader, R.drawable.capstone};
+
+        for (int i = 0; i < titles.length; i++) {
+            mProjects.add(i,new Project(titles[i], subtitles[i], icons[i]));
+        }
 
     }
 
