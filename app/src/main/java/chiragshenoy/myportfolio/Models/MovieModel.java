@@ -25,6 +25,17 @@ public class MovieModel extends BaseModel {
     @SerializedName("original_title")
     private String original_title;
 
+    @SerializedName("vote_average")
+    private String vote_average;
+
+    public void setVote_average(String vote_average) {
+        this.vote_average = vote_average;
+    }
+
+    public String getVote_average() {
+        return vote_average;
+    }
+
     public String getBackdrop_path() {
         return backdrop_path;
     }

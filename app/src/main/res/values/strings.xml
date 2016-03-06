@@ -4,4 +4,10 @@
     <string name="activity_main_title">My App Portfolio</string>
     <string name="generic_error">An Error has occurred</string>
     <string name="internet_error">Connect to the internet</string>
+
+    <string name="movie_poster_transition">movie_poster_transition</string>
+    <string name="rating_total">/10</string>
+    <string name="sort_by_popularity">Sort by popularity</string>
+    <string name="sort_by_rating">Sort by rating</string>
+    <string name="sort_text">Sort</string>
 </resources>
