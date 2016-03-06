@@ -51,12 +51,22 @@ public class MoviesListingAdapter extends RecyclerView.Adapter<MoviesListingAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         final MovieModel movieModelItem = mDataSet.get(position);
-        
+
         if (movieModelItem.getTitle() != null)
             holder.tvMovieTitle.setText(movieModelItem.getTitle());
 
         if (movieModelItem.getPoster_path() != null)
             Picasso.with(mContext).load(AppConstants.TMDB_POSTER_PATH_BASE_URL + movieModelItem.getPoster_path()).into(holder.ivMovieThumbnail);
+
+        holder.cvMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mCardTapListener != null) {
+                    mCardTapListener.onTap(v, movieModelItem);
+                }
+            }
+        });
+
     }
 
     @Override
@@ -65,7 +75,7 @@ public class MoviesListingAdapter extends RecyclerView.Adapter<MoviesListingAdap
     }
 
     public interface CardTapListener {
-        void onTap(View v);
+        void onTap(View v, MovieModel movieModel);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

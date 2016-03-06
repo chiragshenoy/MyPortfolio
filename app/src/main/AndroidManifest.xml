@@ -23,7 +23,7 @@
         </activity>
 
         <activity
-            android:name=".Activities.SpotifyStreamerActivity"
+            android:name=".Activities.SpotifyStreamerMovieListingActivity"
             android:label="Spotify"
             android:screenOrientation="portrait">
             <intent-filter>

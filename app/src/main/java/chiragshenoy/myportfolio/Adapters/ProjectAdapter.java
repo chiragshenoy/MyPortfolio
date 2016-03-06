@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import chiragshenoy.myportfolio.Activities.SpotifyStreamerActivity;
+import chiragshenoy.myportfolio.Activities.SpotifyStreamerMovieListingActivity;
 import chiragshenoy.myportfolio.Models.Project;
 import chiragshenoy.myportfolio.R;
 
@@ -103,7 +102,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
             public void onClick(View v) {
                 Toast.makeText(mContext, mProjects.get(position).getProjectTitle(), Toast.LENGTH_LONG).show();
 
-                Intent i = new Intent(mContext.getApplicationContext(), SpotifyStreamerActivity.class);
+                Intent i = new Intent(mContext.getApplicationContext(), SpotifyStreamerMovieListingActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 mContext.startActivity(i);

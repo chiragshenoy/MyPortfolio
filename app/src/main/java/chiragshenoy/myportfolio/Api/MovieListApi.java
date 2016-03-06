@@ -16,8 +16,11 @@ import chiragshenoy.myportfolio.Utils.AppConstants;
  */
 public class MovieListApi extends AppRequest<MovieList> {
 
-    public MovieListApi(String url, Response.Listener<MovieList> listener, Response.ErrorListener errorListener) {
-        super(Method.GET,"http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=2c3acc66915868cc3f22aa5b9f6968b6", listener, errorListener);
+    public MovieListApi(String sort_order, Response.Listener<MovieList> listener, Response.ErrorListener errorListener) {
+        super(Method.GET, AppConstants.TMDB_BASE_URL, listener, errorListener);
+        setHttpParams("sort_by", sort_order);
+        setHttpParams("api_key", AppConstants.TMDB_API_KEY);
+
         setShouldCache(false);
     }
 
