@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,7 +23,6 @@ import chiragshenoy.myportfolio.Models.Collections.MovieList;
 import chiragshenoy.myportfolio.Models.MovieModel;
 import chiragshenoy.myportfolio.R;
 import chiragshenoy.myportfolio.Utils.AppConstants;
-import chiragshenoy.myportfolio.Utils.NetworkHelperUtils;
 
 /**
  * Created by Chirag Shenoy on 12-Feb-16.

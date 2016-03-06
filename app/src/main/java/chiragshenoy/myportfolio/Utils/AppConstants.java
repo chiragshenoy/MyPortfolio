@@ -9,7 +9,7 @@ public class AppConstants {
     public static String SORTING_MODE_POPULARITY = "popularity.desc";
     public static String SORTING_MODE_HIGHEST_RATED = "vote_count.desc";
     public static String TMDB_API_KEY = "2c3acc66915868cc3f22aa5b9f6968b6";
-    public static String TMDB_POSTER_PATH_BASE_URL = "http://image.tmdb.org/t/p/w500/";
+    public static String TMDB_POSTER_PATH_BASE_URL = "http://image.tmdb.org/t/p/w185/";
     public static String TMDB_BACKDROP_PATH_BASE_URL = "http://image.tmdb.org/t/p/w780/";
 
     public static String POSTER_PATH_EXTRA = "POSTER_PATH_EXTRA";

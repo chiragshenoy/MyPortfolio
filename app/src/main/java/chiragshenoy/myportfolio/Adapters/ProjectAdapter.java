@@ -100,7 +100,6 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, mProjects.get(position).getProjectTitle(), Toast.LENGTH_LONG).show();
 
                 Intent i = new Intent(mContext.getApplicationContext(), SpotifyStreamerMovieListingActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

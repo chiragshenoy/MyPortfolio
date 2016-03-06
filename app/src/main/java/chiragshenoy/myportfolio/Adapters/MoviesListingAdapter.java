@@ -1,9 +1,9 @@
 package chiragshenoy.myportfolio.Adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,11 +29,14 @@ public class MoviesListingAdapter extends RecyclerView.Adapter<MoviesListingAdap
     private final Context mContext;
     private final CardTapListener mCardTapListener;
     private List<MovieModel> mDataSet = new ArrayList<>();
+    Typeface robotobold;
 
 
     public MoviesListingAdapter(Context context, CardTapListener cardTapListener) {
         this.mContext = context;
         this.mCardTapListener = cardTapListener;
+
+        robotobold = Typeface.createFromAsset(mContext.getAssets(), "fonts/robotomedium.ttf");
     }
 
 
@@ -52,11 +55,15 @@ public class MoviesListingAdapter extends RecyclerView.Adapter<MoviesListingAdap
 
         final MovieModel movieModelItem = mDataSet.get(position);
 
+        holder.tvMovieTitle.setTypeface(robotobold);
+
         if (movieModelItem.getTitle() != null)
             holder.tvMovieTitle.setText(movieModelItem.getTitle());
 
         if (movieModelItem.getPoster_path() != null)
-            Picasso.with(mContext).load(AppConstants.TMDB_POSTER_PATH_BASE_URL + movieModelItem.getPoster_path()).into(holder.ivMovieThumbnail);
+            Picasso.with(mContext)
+                    .load(AppConstants.TMDB_POSTER_PATH_BASE_URL + movieModelItem.getPoster_path())
+                    .into(holder.ivMovieThumbnail);
 
         holder.cvMovie.setOnClickListener(new View.OnClickListener() {
             @Override
