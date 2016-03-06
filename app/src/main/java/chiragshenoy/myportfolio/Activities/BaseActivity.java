@@ -21,11 +21,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResource());
         ButterKnife.bind(this);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        if (mToolbar != null) {
-            setSupportActionBar(mToolbar);
-            mToolbar.setTitleTextColor(ContextCompat.getColor(this, android.R.color.white));
-        }
+//        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+//        if (mToolbar != null) {
+//            setSupportActionBar(mToolbar);
+//            mToolbar.setTitleTextColor(ContextCompat.getColor(this, android.R.color.white));
+//        }
     }
     protected abstract int getLayoutResource();
 

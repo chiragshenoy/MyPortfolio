@@ -1,6 +1,7 @@
 package chiragshenoy.myportfolio.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import chiragshenoy.myportfolio.Activities.SpotifyStreamerActivity;
 import chiragshenoy.myportfolio.Models.Project;
 import chiragshenoy.myportfolio.R;
 
@@ -100,6 +102,11 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, mProjects.get(position).getProjectTitle(), Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(mContext.getApplicationContext(), SpotifyStreamerActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                mContext.startActivity(i);
             }
         });
 
